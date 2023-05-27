@@ -77,7 +77,10 @@ class PoeApi:
         variables = {'bot': bot}
         data = {'operationName': 'ChatViewQuery', 'query': query, 'variables': variables}
         response_json = self.send_request('gql_POST', data)
-        return response_json['data']['chatOfBot']['chatId']
+        chat_data = response_json.get('data')
+        if chat_data is None:
+            raise ValueError('Chat data not found!')
+        return chat_data['chatOfBot']['chatId']
 
     def send_message(self, message: str, bot='a2', chat_id: str=''):
         query = f'''
