@@ -13,6 +13,11 @@ This is a reverse-engineered API for Quora's Poe that allows access to the follo
 5. ChatGPT - OpenAI (chinchilla)
 6. Dragonfly - OpenAI (nutria)
 
+## **Requirements**
+```sh
+pip install -r requirements.txt
+```
+
 ## **Authentication**
 
 Sign in at https://www.quora.com/
