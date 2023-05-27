@@ -51,6 +51,9 @@ class PoeApi:
             **self.HEADERS,
             'Quora-Formkey': self.get_formkey(),
         })
+   
+    def __del__(self):
+        self.client.close()
 
     def get_formkey(self):
         response = self.client.get(self.BASE_URL)
