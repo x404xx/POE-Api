@@ -29,12 +29,12 @@ Sign in at https://www.quora.com/
 
 ## **Usage**
 
-You can find an example of how to use this API in the example.py file.
+You can find an example of how to use this API in the _**example.py**_ file.
 
 ## **Credits**
 
 POE.com Reverse Engineered CLI - [Credits to Vaibhavk97](https://github.com/vaibhavk97/Poe)
-- I made some changes to the original API.
+- I made modifications to the original API. The formkey is no longer necessary; only the cookie is required.
 
 ## **Legal Disclaimer**
 
