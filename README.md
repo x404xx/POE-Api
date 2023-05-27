@@ -29,7 +29,53 @@ Sign in at https://www.quora.com/
 
 ## **Usage**
 
-You can find an example of how to use this API in the _**example.py**_ file.
+You can find an example of how to use this API in the example.py file or you can do like the following code
+
+```python
+from json import load
+
+from api import PoeApi
+
+
+with open('config.json') as file:
+    config = load(file)
+
+client = PoeApi(cookie=config['m-b'])
+bots = {
+    1: 'capybara',
+    2: 'beaver',
+    3: 'a2_2',
+    4: 'a2',
+    5: 'chinchilla',
+    6: 'nutria'
+}
+choice = input('Who do you want to talk to?\n'
+            '1. Sage - OpenAI (capybara)\n'
+            '2. GPT-4 - OpenAI (beaver)\n'
+            '3. Claude+ - Anthropic (a2_2)\n'
+            '4. Claude - Anthropic (a2)\n'
+            '5. ChatGPT - OpenAI (chinchilla)\n'
+            '6. Dragonfly - OpenAI (nutria)\n\n'
+            'Your choice: ')
+
+bot = bots[int(choice)]
+print(f'The selected bot is: {bot}')
+chat_id = client.get_chatid(bot)
+client.clear_context(chat_id)
+print("Context is now cleared")
+
+while True:
+    message = input('\033[38;5;121mYou\033[0m : ').lower()
+    if message == '!clear':
+        client.clear_context(chat_id)
+        print("Context is now cleared")
+    elif message == '!exit':
+        break
+    else:
+        client.send_message(message, bot, chat_id)
+        result = client.get_latest_message(bot)
+        print(f'\033[38;5;20m{bot}\033[0m : {result.strip()}')
+```
 
 ## **Credits**
 
