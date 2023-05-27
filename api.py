@@ -169,7 +169,7 @@ class PoeApi:
                 if author_nickname == bot and state == 'complete':
                     break
             else:
-                text = ''
+                text = 'Fail to get a message. Please try again!'
                 break
 
         return text
