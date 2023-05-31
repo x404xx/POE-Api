@@ -45,7 +45,7 @@ class PoeApi:
     }
 
     def __init__(self, cookie: str):
-        self.client = Client()
+        self.client = Client(timeout=180)
         self.client.cookies.set('m-b', cookie)
         self.client.headers.update({
             **self.HEADERS,
