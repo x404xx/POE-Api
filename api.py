@@ -45,10 +45,9 @@ class PoeApi:
     }
 
     def __init__(self, cookie: str):
-        self.client = Client(timeout=180)
+        self.client = Client(headers=self.HEADERS, timeout=180)
         self.client.cookies.set('m-b', cookie)
         self.client.headers.update({
-            **self.HEADERS,
             'Quora-Formkey': self.get_formkey(),
         })
    
