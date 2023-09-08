@@ -1,5 +1,7 @@
 <div align="center">
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=4000&pause=500&color=F70000&center=true&width=435&lines=The+script+is+not+maintained..)](https://git.io/typing-svg)
+    
 # Quora Poe <img src="https://qsf.cf2.quoracdn.net/-4-images.favicon-new.ico-26-07ecf7cd341b6919.ico" width="35px">
 This is a reverse-engineered API for Quora's Poe that allows access to the following chatbots.
 
